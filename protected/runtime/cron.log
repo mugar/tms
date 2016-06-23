@@ -1,0 +1,104 @@
+2014/06/27 11:38:56 [error] [php] include(ExportCommand.php): failed to open stream: No such file or directory (/var/www/framework/YiiBase.php:427)
+Stack trace:
+#0 /var/www/framework/console/CConsoleCommandRunner.php(170): spl_autoload_call()
+#1 /var/www/framework/console/CConsoleCommandRunner.php(67): CConsoleCommandRunner->createCommand()
+#2 /var/www/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#3 /var/www/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#4 /var/www/cron.php(9): CConsoleApplication->run()
+
+in /var/www/cron.php (9)
+2014/06/27 11:40:12 [error] [php] include(ExportCommand.php): failed to open stream: No such file or directory (/var/www/framework/YiiBase.php:427)
+Stack trace:
+#0 /var/www/framework/console/CConsoleCommandRunner.php(170): spl_autoload_call()
+#1 /var/www/framework/console/CConsoleCommandRunner.php(67): CConsoleCommandRunner->createCommand()
+#2 /var/www/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#3 /var/www/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#4 /var/www/cron.php(9): CConsoleApplication->run()
+
+in /var/www/cron.php (9)
+2014/06/27 14:27:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[42000] [1049] Unknown database 'db_name'' in /var/www/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/framework/base/CApplication.php(450): CModule->getComponent('db')
+#4 /var/www/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
+#5 /var/www/framework/db/ar/CActiveRecord.php(2361): CActiveRecord->getDbConnection()
+#6 /var/www/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Task))
+#7 /var/www/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#8 /var/www/tms/protected/commands/ExportCommand.php(7): CActiveRecord->__construct('search')
+#9 /var/www/framework/console/CConsoleCommandRunner.php(71): ExportCommand->run(Array)
+#10 /var/www/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#11 /var/www/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#12 /var/www/cron.php(9): CApplication->run()
+#13 {main}
+---
+2014/06/27 14:28:05 [error] [php] Undefined variable: mode (/var/www/tms/protected/commands/ExportCommand.php:15)
+Stack trace:
+#0 /var/www/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#1 /var/www/cron.php(9): CConsoleApplication->run()
+
+in /var/www/tms/protected/commands/ExportCommand.php (15)
+in /var/www/cron.php (9)
+2014/06/27 14:28:32 [error] [php] Undefined variable: service (/var/www/tms/protected/commands/ExportCommand.php:23)
+Stack trace:
+#0 /var/www/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#1 /var/www/cron.php(9): CConsoleApplication->run()
+
+in /var/www/tms/protected/commands/ExportCommand.php (23)
+in /var/www/cron.php (9)
+2014/06/27 14:28:49 [error] [exception.CException] exception 'CException' with message 'Property "CConsoleApplication.user" is not defined.' in /var/www/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/framework/base/CModule.php(105): CComponent->__get('user')
+#1 /var/www/tms/protected/models/Task.php(141): CModule->__get('user')
+#2 /var/www/tms/protected/commands/ExportCommand.php(27): Task->search(Object(CDbCriteria), false)
+#3 /var/www/framework/console/CConsoleCommandRunner.php(71): ExportCommand->run(Array)
+#4 /var/www/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#5 /var/www/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#6 /var/www/cron.php(9): CApplication->run()
+#7 {main}
+---
+2014/06/27 14:29:23 [error] [exception.CException] exception 'CException' with message 'Property "CConsoleApplication.user" is not defined.' in /var/www/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/framework/base/CModule.php(105): CComponent->__get('user')
+#1 /var/www/tms/protected/models/Task.php(141): CModule->__get('user')
+#2 /var/www/tms/protected/commands/ExportCommand.php(20): Task->search(Object(CDbCriteria), false)
+#3 /var/www/framework/console/CConsoleCommandRunner.php(71): ExportCommand->run(Array)
+#4 /var/www/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#5 /var/www/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#6 /var/www/cron.php(9): CApplication->run()
+#7 {main}
+---
+2014/06/27 14:41:47 [error] [exception.CException] exception 'CException' with message 'ExportCommand and its behaviors do not have a method or closure named "mySql2PhpTime".' in /var/www/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/tms/protected/commands/ExportCommand.php(29): CComponent->__call('mySql2PhpTime', Array)
+#1 /var/www/tms/protected/commands/ExportCommand.php(29): ExportCommand->mySql2PhpTime('2014-06-27 15:3...')
+#2 /var/www/framework/console/CConsoleCommandRunner.php(71): ExportCommand->run(Array)
+#3 /var/www/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#4 /var/www/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#5 /var/www/cron.php(9): CApplication->run()
+#6 {main}
+---
+2014/06/27 15:01:22 [error] [exception.CException] exception 'CException' with message 'Property "CConsoleApplication.ePdf" is not defined.' in /var/www/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/framework/base/CModule.php(105): CComponent->__get('ePdf')
+#1 /var/www/tms/protected/commands/ExportCommand.php(138): CModule->__get('ePdf')
+#2 /var/www/tms/protected/commands/ExportCommand.php(66): ExportCommand::pdf(Array, Array, Array, Array)
+#3 /var/www/framework/console/CConsoleCommandRunner.php(71): ExportCommand->run(Array)
+#4 /var/www/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#5 /var/www/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#6 /var/www/cron.php(9): CApplication->run()
+#7 {main}
+---
+2014/06/27 13:08:33 [error] [php] include(Self.php): failed to open stream: No such file or directory (/var/www/framework/YiiBase.php:427)
+Stack trace:
+#0 /var/www/tms/protected/commands/ExportCommand.php(185): spl_autoload_call()
+#1 /var/www/tms/protected/commands/ExportCommand.php(66): pdf()
+#2 /var/www/framework/console/CConsoleCommandRunner.php(71): ExportCommand->run()
+#3 /var/www/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#4 /var/www/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#5 /var/www/cron.php(9): CConsoleApplication->run()
+
+in /var/www/tms/protected/commands/ExportCommand.php (185)
+in /var/www/tms/protected/commands/ExportCommand.php (66)
+in /var/www/cron.php (9)
